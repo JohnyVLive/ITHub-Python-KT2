@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<h2>{{ the_title }}</h2>
+
+<form method='POST' action='/auth'>
+<table>
+<p>Please enter your login and password:</p>
+<tr><td>Login:</td><td><input name='login' type='TEXT' width='60'></td></tr>
+<tr><td>Password:</td><td><input name='password' type='PASSWORD' width='60'></td></tr>
+</table>
+<p><input value='Enter' type='SUBMIT'></p>
+</form>
+
+
+{% if tried_to_login %}
+    <p class="badlogin">Login or password are incorrect</p>
+{% endif %}
+
+{% endblock %}
